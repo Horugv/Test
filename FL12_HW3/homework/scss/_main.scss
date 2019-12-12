@@ -1,0 +1,269 @@
+
+@mixin btn($bgcolor) {
+    width: 140px;
+    height: 48px;
+
+    background-color: $bgcolor;
+    color: #f2f3f7;
+
+    border:  none;
+    border-radius: 2px;
+
+    
+    font-weight: 600;
+    font-size: 16px;
+    &:hover { 
+        background-color: darken($bgcolor, 10%)
+    }
+}
+
+@mixin link($color, $fontSize) {
+    color: $color;
+    font-size: $fontSize;
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: $bodyBg;
+    font-family: 'Source Sans Pro', sans-serif; 
+    color: $landing_color;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 1920px; 
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    height: 710px;
+    background-image: url($headerImage);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    border-bottom-right-radius: 40%;
+}
+
+.header-wrap{
+    display: flex;
+    flex-direction: column;
+    width: 1520px;
+    margin-top: 20px;
+
+}
+
+.landing-logo{
+    display: flex;
+    text-align: center;
+    align-content: center;
+    font-family: $diferentFont;
+    width: 130px;
+    img{
+        margin-right: 15px;
+        height: 44px;
+        width: 44px;
+    }
+    p{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 17px;
+
+        span {
+            margin-top: 5px;
+            font-size: 10px;
+        }
+    }
+}
+
+.header_heading{
+    margin-top: 75px;
+    width: 490px;
+    font-size: 72px;
+
+    font-weight: bold;
+    line-height: 70px;
+    
+    
+    background: linear-gradient($awesomeBg,$awesomeBg);
+    background-size: 300px 50px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+}
+
+.header_text{
+    margin-top: 35px;
+    width: 660px;
+    white-space: pre-line;
+    line-height: 24px;
+    font-family: $diferentFont;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+.header_button{
+    margin-top: 60px;
+}
+
+
+
+.header_button{
+    @include btn($btnBgColor);
+    margin-right: 150px;
+}
+.login{
+    @include link(#fff, 19px);
+}
+
+
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 30px;
+}
+
+.section_text{
+    padding-top: 10px;
+    font-size: 42px;
+
+    font-weight: 600;
+    
+    background: linear-gradient($awesomeBg,$awesomeBg);
+    background-size: 190px 50px;
+    background-position: right 13px bottom 8px;
+    background-repeat: no-repeat;
+}
+
+.section_card_wrap{
+    margin-top: 35px - $sectionCardMargin;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.section_card{
+    width: 1105px;
+    margin-top: $sectionCardMargin;
+    padding: 20px;
+    border-radius: 5px;
+
+    background: $sectionCardBg;
+    color: #fff;
+
+    display: flex;
+}
+
+.section_card_img{
+    width: 430px;
+    height: 285px;
+    border-radius: 5px;
+}
+
+.section_card_right_container{
+    width: 490px;
+    margin: 49px 90px 0 90px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.section_card_heading{
+    
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.section_card_text{
+    margin-top: 40px;
+    text-align: justify;
+    color: $sectionCardText;
+    font-family: $diferentFont;
+    text-align: justify;
+    line-height: 24px;
+}
+
+
+.section_link{
+    text-align: center;
+    margin-top: 20px;
+    @include link($sectionCardText, 16px); 
+}
+
+
+.section_banner{
+    z-index: 999999;
+    width: 1190px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;      
+    margin-top: 140px;
+    padding: 0px 160px;
+    border-radius: 5px;
+    background: linear-gradient(to right,$banerGradient1, $banerGradient2, $banerGradient3, $banerGradient4, $banerGradient5);
+}
+
+.section_banner_text_wrap{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+}
+
+.section_banner_heading{
+    padding-top: 15px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 50px;
+    background: linear-gradient($awesomeBg,$awesomeBg);
+    background-size:  65px 50px ;
+    background-position: left 120px bottom 7px;
+    background-repeat: no-repeat;
+
+}
+
+.section_banner_text{
+    color: $sectionCardText;
+    font-family: $diferentFont;
+}
+.section_banner_button{
+    @include btn($btnBgColor);
+}
+
+
+
+.footer{ 
+    background: $sectionCardBg;
+    display: flex;
+    justify-content: center;
+    margin-top: -75px;
+}
+
+.footer-wrap{  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1520px;
+    padding: 130px 0 65px 0;
+    @extend .section_banner_text;
+}
+
+.footer_text{
+    font-size: 14px;
+    line-height: 20px;
+    width: 300px;   
+}
