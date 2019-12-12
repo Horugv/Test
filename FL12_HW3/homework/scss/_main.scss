@@ -17,7 +17,7 @@
     }
 }
 
-@mixin link($color, $fontSize) {
+@mixin link($color, $fontSize:14px) {
     color: $color;
     font-size: $fontSize;
 
@@ -160,7 +160,7 @@ body{
     padding: 20px;
     border-radius: 5px;
 
-    background: $sectionCardBg;
+    background: map-get($section, CardBg);
     color: #fff;
 
     display: flex;
@@ -190,7 +190,7 @@ body{
 .section_card_text{
     margin-top: 40px;
     text-align: justify;
-    color: $sectionCardText;
+    color: map-get($section, CardText );
     font-family: $diferentFont;
     text-align: justify;
     line-height: 24px;

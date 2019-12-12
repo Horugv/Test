@@ -8,6 +8,11 @@ $sectionCardMargin: 25px;
 $sectionCardBg: #21232e;
 $sectionCardText: #c0c3ce;
 
+$section: (
+ CardBg          : $sectionCardBg ,
+ CardText        :$sectionCardText
+);
+
 $banerGradient1: #649410;
 $banerGradient2: #5a8a36;
 $banerGradient3: #4b7a6d;
